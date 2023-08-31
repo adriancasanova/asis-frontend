@@ -1,0 +1,62 @@
+
+
+
+<div class="centrar">
+     <app-aside ></app-aside> 
+     <div class="section">
+        <div class="alert alert-primary" role="alert" *ngIf="showAlert">
+            Es tu turno 
+        </div>        
+<div class="div-alert">
+    <div class="cardContent">
+    <div class="card cardColor">
+        <div class="card-body">
+          <h5 class="card-title">Hola {{name}}</h5>
+          <h6 class="card-subtitle mb-2 text-center"> Espero que estes muy bien </h6>
+          <p class="card-text text-center">Te avisare cuando sea tu turno mediante una alerta. Si tienes alguna duda de en que posicion te encuentras puedes chequear el contador de abajo.</p>
+          <div class="card-footer bg-transparent border-danger text-center">Faltan <span>{{turno}}</span> turnos para llegar a ti</div>
+        
+    <!-- No esta en uso -->
+          <div class="card-" ><li class="list-group-item" *ngFor="let socketHora of socketHoraService.webSocketHora">
+            <strong >{{socketHora.nombre}}: </strong>
+            <span>{{socketHora.posicion}}</span>
+           
+        </li>
+
+     
+
+         <audio autoplay="true" src='' type="audio/mp3" class="none" #sonido>
+            Your browser does not support the <code>audio</code> element.
+         </audio>
+      <!--   <button (click)="reproducir()">llll</button> -->
+    
+       
+        </div>
+      </div>
+</div>
+
+
+
+<!-- <div class="container">
+
+
+    <div class="chat-content">
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let socketHora of socketHoraService.webSocketHora">
+                    <strong>{{socketHora.nombre}}: </strong>
+                    <span>{{socketHora.posicion}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+  
+</div>  -->
+
+</div>
+</div>
+</div>
+     </div>
+
+

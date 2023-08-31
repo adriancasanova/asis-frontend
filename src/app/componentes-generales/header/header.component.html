@@ -1,0 +1,18 @@
+<header class="mb-auto mt-auto">
+    <div class="div_header">
+      <h3 class="float-md-start mb-0">
+        <div class="contenedor-logos">
+          <img src=".\assets\imagenes\iso.png" class="isotipo">
+          <img src=".\assets\imagenes\logo2.png" class="logotipo">
+        </div>
+        </h3>  
+        
+      
+    </div>
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+    <a class="nav-link logout " routerLink="/login" *ngIf="Logueado('/recepcion')" (click)="desloguear()"> Cerrar sesión </a>        
+    </nav> 
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+      <a class="nav-link logout "  *ngIf="Logueado('/venta')" (click)="desloguear()"> Cerrar sesión </a>        
+      </nav> 
+  </header>

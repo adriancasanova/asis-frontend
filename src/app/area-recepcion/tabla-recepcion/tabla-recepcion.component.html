@@ -1,0 +1,87 @@
+
+<div class="centrar">
+  <app-aside ></app-aside> 
+ 
+  <div class="section">
+    <app-formulario-ingreso
+      (messageEvent)="receiveMessage($event)"
+
+    ></app-formulario-ingreso>
+
+
+
+     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button
+        class="btn btn-danger btn-notificar-vendedor me-md-5"
+        (click)="notificarTurnoVendedor()"
+      >
+        Notificar vendedor
+      </button>
+    </div> 
+ 
+
+    <div class="ContenidoTabla">
+     
+      <div class="mb-5 col-sm-4 search-box">
+        <div class="form-group">
+        <input
+        class="forms-control me-2"
+        type="text"
+        placeholder="Buscar"
+        name="filterPost"
+        aria-label="Search"
+        [(ngModel)]="filterPost"
+        [ngModel]="inputBuscar"
+        (ngModelChange)="inputBuscar = $event.toUpperCase()"
+      
+      />
+      
+      </div>
+      </div>
+
+    
+
+      <div id="div1">
+        <table class="table">   
+          <thead>
+            <tr  >
+              <th scope="col">NRO</th>
+              <th scope="col">TIPO DE PROSPECTO</th>
+              <th scope="col">NOMBRE Y APELLIDO</th>
+              <th scope="col">DNI</th>
+              <th scope="col">NRO DE CONTACTO</th>
+              <th scope="col">MOTIVO</th>
+              <th scope="col">DEPARTAMENTO</th>
+              <th scope="col">PROCEDENCIA</th>
+              <th scope="col">EMPLEADO</th>
+              <th scope="col">OBSERVACIONES</th>
+            </tr>
+          </thead>
+          <tbody >
+     
+            <tr *ngFor="let data of recepcionData | filter:filterPost  | paginate: { itemsPerPage: 10, currentPage: page } ; let indice=index ">
+             
+              <th scope="row">{{indice + 1}}</th>
+              <td>{{ data.tipoDeProspecto }}</td>
+              <td>{{ data.nombreApellido }}</td>
+              <td>{{ data.dni }}</td>
+              <td>{{ data.nroContacto }}</td>
+              <td>{{ data.motivo }}</td>
+              <td>{{ data.departamento }}</td>
+              <td>{{ data.procedencia }}</td>
+              <td>{{ data.empleado }}</td>
+              <td>{{ data.observaciones }}</td>
+            </tr>
+          </tbody>
+        </table>   
+        
+        
+   
+
+      </div>
+      <pagination-controls (pageChange)="page = $event" previousLabel="anterior" nextLabel="posterior"></pagination-controls>
+    </div>
+    
+  </div>
+</div>
+

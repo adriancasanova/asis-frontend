@@ -1,0 +1,40 @@
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+  <div class="login" #alerta>
+    <form
+      class="custom-form"
+      method=""
+      (ngSubmit)="login($event)"
+      [formGroup]="loginForm"
+    >
+
+      <h2 class="text-center">Inicie sesión</h2>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Usuario"
+        required="required"
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Contraseña"
+        required="required"
+      />
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? "Cargando....." : "Login" }}
+      </button>
+       <div class="alertaInicioSesion" *ngIf="loginIncorrecto">
+        <h6 class="colorAlerta">Usuario o contraseña incorrecta</h6>
+      </div>
+      <p> <strong>Recepcionista:</strong> <br>
+        Usuario: <i>admin</i> • Contraseña: <i>admin</i> <br>
+        <strong>Vendedor uno: </strong><br>
+        Usuario: <i>vendedorUno</i> • Contraseña: <i>vendedorUno</i> <br>
+      <strong> Vendedor dos: </strong><br>
+       Usuario: <i>vendedorDos</i> • Contraseña: <i>vendedorDos</i></p>
+    </form>
+    
+  </div>
+</div>

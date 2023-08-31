@@ -1,0 +1,76 @@
+
+ .alertaInicioSesion {
+  text-align: center;
+  border: solid 1px #0b0606;
+  padding: 0.5em;
+ }
+ .colorAlerta {
+  color: #ef0b0b;
+ }
+  .custom-form {
+    min-width: 300px;
+    max-width: 40%;
+  /*  margin: 0px auto; */
+   
+    padding: 2rem 3rem; 
+    margin: auto;
+   
+ 
+   
+    margin-top: 5rem;
+
+   
+  }
+  .custom-form input {
+    display: block;
+    margin: 2rem auto;
+    width: 96%;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    border: none;   
+    border-bottom: 0.2rem solid rgb(245, 22, 22); 
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .custom-form button {    
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: /*#ffffff*/ black;
+    font-weight: bold;   
+    width: 50%;
+    display: block;
+    padding: 0.875rem 1rem;  
+    cursor: pointer;
+    margin: 3rem auto;
+    border-radius: 0.5rem;    
+    
+  }
+  
+  .custom-form button:hover {
+    transition: 0.3s;
+    color: #dee2e6;
+    background-color: rgb(240, 129, 129);
+    font-size: 0.9rem;
+    width: 52%;
+  }
+ 
+  input:focus {
+    outline: 0;
+    outline: none;
+    text-align: center;
+    border-bottom: 0.25rem solid rgb(245, 22, 22) !important; 
+    width: 100% !important;
+  }
+  
+  ::placeholder {
+    font-family: Inter;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #000103;
+    opacity: 0.5;    
+  }

@@ -1,0 +1,552 @@
+<div class="centrar">
+  <div class="section" id="prueba">
+    <div class="mb-5 col-sm-2 offset-9 search-box">
+      <input
+        class="form-control search-icon"
+        type="search"
+        placeholder="Buscar"
+        aria-label="Search"
+        [ngModel]="inputBuscarFormulario"
+        (ngModelChange)="inputBuscarFormulario = $event.toUpperCase()"
+      />
+    </div>
+    <form class="add-form" [formGroup]="formValueAgregar">
+      <div class="row">
+        <div class="selectbox mb-3 col-sm-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >TIPO DE PROSPECTO</label
+          >
+          <div class="selectProspecto" id="selectProspecto">
+            <div class="contenido-selectProspecto"></div>
+            <i class="bi bi-chevron-compact-down"></i>
+          </div>
+
+          <div
+            class="opcionesProspecto"
+            id="opcionesProspecto"
+            #opcionesProspectoListen
+          >
+            <a href="#" class="opcionProspecto">
+              <div class="contenido-opcionProspecto">
+                <div class="textos">
+                  <h1 class="tituloProspecto" #prueba>PROSPECTO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProspecto">
+              <div class="contenido-opcionProspecto">
+                <div class="textos">
+                  <h1 class="tituloProspecto">CLIENTE</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProspecto">
+              <div class="contenido-opcionProspecto">
+                <div class="textos">
+                  <h1 class="tituloProspecto">PROVEEDOR</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="mb-3 col-sm-5">
+          <label for="exampleFormControlInput1" class="form-label"
+            >NOMBRE Y APELLIDO/RAZON SOCIAL</label
+          >
+          <input
+            [ngModel]="inputvalueNombre"
+            formControlName="nombreApellido"
+            (ngModelChange)="inputvalueNombre = $event.toUpperCase()"
+            class="form-control form-control"
+            type="text"
+            placeholder="Nombre y apellido"
+            aria-label=".form-control-lg example"
+          />
+        </div>
+        <!--  <div class="mb-3 col-sm-3"> 
+      <label for="exampleFormControlInput1" class="form-label">NOMBRE</label>
+      <input (keyup)="mayus($event)" class="form-control form-control" type="text" placeholder="Nombre" aria-label=".form-control-lg example" >
+      </div>  -->
+
+        <div class="mb-3 col-sm-2">
+          <label for="exampleFormControlInput1" class="form-label">DNI</label>
+          <input
+            [ngModel]="inputvalueApellido"
+            formControlName="dni"
+            (ngModelChange)="inputvalueApellido = $event.toUpperCase()"
+            class="form-control form-control"
+            type="text"
+            placeholder="DNI"
+            aria-label=".form-control-lg example"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3 col-sm-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >NRO DE CONTACTO</label
+          >
+          <input
+            class="form-control form-control"
+            formControlName="nroContacto"
+            type="text"
+            placeholder=""
+            aria-label=".form-control-lg example"
+          />
+        </div>
+
+        <div class="selectbox mb-3 col-sm-4">
+          <label for="exampleFormControlInput1" class="form-label"
+            >MOTIVO</label
+          >
+          <div class="select" id="select">
+            <div class="contenido-select"></div>
+            <i class="bi bi-chevron-compact-down"></i>
+          </div>
+
+          <div class="opciones" id="opciones" #opcionesListen>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">VENTA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">COMPRA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">CONSIGNACION</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">PERMUTA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">FINANCIACION</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">ENTREGA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">GESTORIA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">PAGO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">GARANTIA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">PEDIDO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">RETIRO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcion">
+              <div class="contenido-opcion">
+                <div class="textos">
+                  <h1 class="titulo">VARIOS</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <input
+          type="hidden"
+          formControlName="motivo"
+          id="inputSelect"
+          value=""
+        />
+
+        <div class="selectbox mb-3 col-sm-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >DEPARTAMENTO</label
+          >
+          <div class="selectDepartamento" id="selectDepartamento">
+            <div class="contenido-selectDepartamento"></div>
+            <i class="bi bi-chevron-compact-down"></i>
+          </div>
+
+          <div
+            class="opcionesDepartamento"
+            id="opcionesDepartamento"
+            #opcionesDepartamentoListen
+          >
+            <a href="#" class="opcionDepartamento">
+              <div class="contenido-opcionDepartamento">
+                <div class="textos">
+                  <h1 class="tituloDepartamento">ADMINISTRATIVO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionDepartamento">
+              <div class="contenido-opcionDepartamento">
+                <div class="textos">
+                  <h1 class="tituloDepartamento">COMERCIAL</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionDepartamento">
+              <div class="contenido-opcionDepartamento">
+                <div class="textos">
+                  <h1 class="tituloDepartamento">OPERATIVO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionDepartamento">
+              <div class="contenido-opcionDepartamento">
+                <div class="textos">
+                  <h1 class="tituloDepartamento">GERENCIAL</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionDepartamento">
+              <div class="contenido-opcionDepartamento">
+                <div class="textos">
+                  <h1 class="tituloDepartamento">RRHH</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <input
+          type="hidden"
+          formControlName="departamento"
+          id="inputSelectDepartamento"
+          value=""
+        />
+      </div>
+      <div class="row">
+        <div class="selectbox mb-3 col-sm-5">
+          <label for="exampleFormControlInput1" class="form-label"
+            >PROCEDENCIA</label
+          >
+          <div class="selectProcedencia" id="selectProcedencia">
+            <div class="contenido-selectProcedencia"></div>
+            <i class="bi bi-chevron-compact-down"></i>
+          </div>
+
+          <div
+            class="opcionesProcedencia"
+            id="opcionesProcedencia"
+            #opcionesProcedenciaListen
+          >
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">CELMAN JUAN IGNACIO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">FILIPPI NAIR</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">TURDO GINO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">RIQUELME ALDANA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">MOREIRA LUCAS</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">SETIEN WANDA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">SETIEN ALAN</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">SEIVANE MARIELA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">AGENCIA</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">RECOMENDADO</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">PUBLICACIONES</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionProcedencia">
+              <div class="contenido-opcionProcedencia">
+                <div class="textos">
+                  <h1 class="tituloProcedencia">NO APLICA</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <input
+          type="hidden"
+          formControlName="procedencia"
+          id="inputSelectProcedencia"
+          value=""
+        />
+
+        <div class="selectbox mb-3 col-sm-5">
+          <label for="exampleFormControlInput1" class="form-label"
+            >EMPLEADO</label
+          >
+          <div class="selectEmpleado" id="selectEmpleado">
+            <div class="contenido-selectEmpleado"></div>
+            <i class="bi bi-chevron-compact-down"></i>
+          </div>
+
+          <div
+            class="opcionesEmpleado"
+            id="opcionesEmpleado"
+            #opcionesEmpleadoListen
+          >
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">
+                    MERCADO SOLEDAD (Administrativa)
+                  </h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">CELMAN JUAN IGNACIO (Gerente)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">
+                    FILIPPI NAIR (Sub Jefe de ventas)
+                  </h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">TURDO GINO (Vendedor)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">RIQUELME ALDANA (Vendedora)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">MOREIRA LUCAS (Comprador)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">SETIEN WANDA (Datera)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">SEIVANE MARICEL (Datera)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">GIACOMINI MATIAS (Mecanico)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">
+                    VICARI NICOLAS (Encargado Operativo)
+                  </h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">GONZALEZ DARIO (Operativo)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">CRIADO BRIAN (Operativo)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">RAFFAELLI SIMON (Operativo)</h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">
+                    SETIEN ALAN (Gerente Operativo)
+                  </h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">
+                    BELARDINELLI EZEQUEIL (Gerente Comercial)
+                  </h1>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="opcionEmpleado">
+              <div class="contenido-opcionEmpleado">
+                <div class="textos">
+                  <h1 class="tituloEmpleado">COLOMAR SARA (RRHH)</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <input
+          type="hidden"
+          formControlName="empleado"
+          id="inputSelectEmpleado"
+          value=""
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-sm-4">
+          <label for="exampleFormControlInput1" class="form-label"
+            >OBSERVACIONES</label
+          >
+          <input
+            [ngModel]="inputvalueObservaciones"
+            formControlName="observaciones"
+            (ngModelChange)="inputvalueObservaciones = $event.toUpperCase()"
+            class="form-control form-control"
+            type="text"
+            placeholder="Informacion importante"
+            aria-label=".form-control-lg example"
+            style="outline: none"
+          />
+        </div>
+
+        <div
+          class="d-grid gap-2 d-md-flex justify-content-md-start mt-5 guardar mb-5"
+        >
+          <button
+            class="btn btn-danger boton-guardar-registro"
+            type="button"
+            (click)="postIngresoDetails()"
+          >
+            Guardar
+          </button>
+          <button class="btn btn-light boton-cancelar-registro" type="button" (click)="cancelar()">
+            Cancelar
+          </button>
+        </div>
+        <div class="mb-3 col-sm-12"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+

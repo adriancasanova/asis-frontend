@@ -1,0 +1,73 @@
+.cardContent {
+  height: 100vw;
+
+}
+
+
+
+.card {
+  background-color: rgb(212, 218, 218);
+  margin-top: 1rem;
+  width: 20rem;
+  margin: 2rem auto;
+
+}
+.card-title {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.card-footer {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-footer span {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  color: rgb(255, 0, 0);
+}
+
+
+.centrar {
+  display: flex;
+     
+}
+
+.section {      
+  margin-top: 3rem;   
+  width: 100%;
+  padding-top: 1rem;
+  margin-left: 2.5rem;
+}  
+
+.alert {
+  display: flex;
+  position: fixed;
+  width: 200px;
+  height: 150px;
+  top: 75px;
+  right: 24px;
+  font-size:  1.5rem;
+  justify-content: center;
+  align-items: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+/*--------------------*/
+

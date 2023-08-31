@@ -1,0 +1,60 @@
+
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+    <div class="registro" #alerta>
+      <form
+        class="custom-form"
+        method=""
+        (ngSubmit)="registrarUsuario($event)"
+        [formGroup]="formularioRegistro"
+      >
+  
+       <h2 class="text-center">Cargar nuevo usuario</h2>
+       <input
+       type="nombre"
+       formControlName="nombre"
+       placeholder="Nombre"
+       required="required"
+     />
+     <input
+     type="apellido"
+     formControlName="apellido"
+     placeholder="Apellido"
+     required="required"
+   />
+   <input
+   type="dni"
+   formControlName="dni"
+   placeholder="DNI"
+   required="required"
+ />
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Email"
+          required="required"
+        />
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Contraseña"
+          required="required"
+        /> 
+         <input
+        type="rol"
+        formControlName="rol"
+        placeholder="Rol"
+        required="required"
+      />
+ 
+  
+        <button type="submit" [disabled]="loading">
+          {{ loading ? "Cargando....." : "Registro" }}
+        </button>
+    
+  
+      </form>
+      
+    </div>
+  </div>
