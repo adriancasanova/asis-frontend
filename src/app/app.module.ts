@@ -23,6 +23,7 @@ import { ComponentesGeneralesModule } from './componentes-generales/componentes-
   declarations: [
     AppComponent,
     ActualizadorDirective,
+   
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,9 @@ import { ComponentesGeneralesModule } from './componentes-generales/componentes-
     StoreDevtoolsModule.instrument({name: 'TEST'}),
     NgxPaginationModule,
     ComponentesGeneralesModule
+  ],
+  exports: [
+   
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },

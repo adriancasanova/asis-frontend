@@ -21,7 +21,7 @@ import { AutenticacionService } from 'src/app/area-inicio/servicios/autenticacio
 import { HelperServiceService } from 'src/app/componentes-generales/servicios/helper-service.service';
 import { SocketHoraService } from 'src/app/servicios/socket-hora.service';
 import { TablaRecepcionService } from 'src/app/area-recepcion/servicios/tabla-recepcion.service';
-import { WebSocketService } from 'src/app/servicios/web-socket.service';
+
 
 
 @Component({
@@ -70,7 +70,6 @@ export class TablaRecepcionComponent implements OnInit, OnDestroy {
     private render2: Renderer2,
     private helperService: HelperServiceService,
     private router: Router,
-  //  public webSocketService: WebSocketService,
     public socketHoraService: SocketHoraService
    
   ) {
@@ -87,10 +86,7 @@ export class TablaRecepcionComponent implements OnInit, OnDestroy {
     this.getRecepcionPersona();
     this.getHoraIngresoVendedor();
  
-  /*
-    this.store.dispatch(loadItems()) //TODO🔴
-    */
-   // this.webSocketService.openWebSocket();
+
    this.socketHoraService.openWebSocket();
 
 
@@ -114,7 +110,7 @@ export class TablaRecepcionComponent implements OnInit, OnDestroy {
   sendMessageHora(nombre: string, posicion: any) {
     const webSocketHora = new WebSocketHora(nombre, posicion);
     this.socketHoraService.sendMessage(webSocketHora)   
-   // console.log(webSocketHora)
+    console.log("webSocketHora" + webSocketHora)
   } 
 
 

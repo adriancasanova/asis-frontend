@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { WebSocketHora } from '../WebSocketHora';
-import { Observable, of } from 'rxjs';
-
+import { Observable, map, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class SocketHoraService {
   webSocket!: WebSocket; 
-
+  private apiUrl: string = 'http://localhost:8080/horaIngreso/';
 //  webSocketHora: Observable <WebSocketHora[]> = [];
+//webSocket!: WebSocket;
+//chatMessages: ChatMessageDto[] = [];
 webSocketObservable: Observable<WebSocketHora[]> = new Observable;
 webSocketHora: WebSocketHora[] = [];
 
-  constructor() {
-    this.webSocket = new WebSocket('ws://localhost:8080/chat')
+  constructor(private http: HttpClient) {
+    this.webSocket = new WebSocket('ws://localhost:8080/contador')
    }
 
   public openWebSocket() {
@@ -39,4 +41,10 @@ webSocketHora: WebSocketHora[] = [];
   public closeWebSocket() {
     this.webSocket.close();
   } 
+
+
+ 
+ 
+
+
 }

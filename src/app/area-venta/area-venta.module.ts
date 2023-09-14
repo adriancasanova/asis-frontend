@@ -8,13 +8,15 @@ import { VendedorComponent } from './vendedor/vendedor.component';
 import { AsideComponent } from '../componente-aside/aside/aside.component';
 import { HeaderComponent } from '../componentes-generales/header/header.component';
 import { ComponentesGeneralesModule } from '../componentes-generales/componentes-generales.module';
+import { AppModule } from '../app.module';
+import { ComponenteAsideModule } from '../componente-aside/componente-aside.module';
 
 
 @NgModule({
   declarations: [
     TablaVendedorComponent,
     VendedorComponent,
-    AsideComponent
+    
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { ComponentesGeneralesModule } from '../componentes-generales/componentes
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    ComponentesGeneralesModule
+    ComponentesGeneralesModule,
+    ComponenteAsideModule
   ]
 })
 export class AreaVentaModule { }

@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   DoCheck,
   ElementRef,
@@ -18,7 +19,6 @@ import { AutenticacionService } from 'src/app/area-inicio/servicios/autenticacio
 import { HelperServiceService } from 'src/app/componentes-generales/servicios/helper-service.service';
 import { TablaRecepcionService } from 'src/app/area-recepcion/servicios/tabla-recepcion.service';
 import { TablaRecepcionComponent } from '../../area-recepcion/tabla-recepcion/tabla-recepcion.component';
-import { WebSocketService } from 'src/app/servicios/web-socket.service';
 import { SocketHoraService } from 'src/app/servicios/socket-hora.service';
 import { WebSocketHora } from 'src/app/WebSocketHora';
 import { ChatMessageDto } from 'src/app/ChatMessageDto';
@@ -31,7 +31,7 @@ import { ArrayIngreso } from 'src/app/arrayIngreso';
   styleUrls: ['./tabla-vendedor.component.css'],
   providers: [HelperServiceService],
 })
-export class TablaVendedorComponent implements OnInit, OnDestroy {
+export class TablaVendedorComponent implements OnInit, OnDestroy, OnChanges {
   socketHoras!: any[];
   name!: string;
   Arrayturno!: string;
@@ -57,7 +57,11 @@ export class TablaVendedorComponent implements OnInit, OnDestroy {
   todaviaEstaEnLaBase!: boolean;
   newHoraIngreso: ArrayIngreso = new ArrayIngreso();
   nombreBase: any;
-
+  //@Input() title!: any;
+  @ViewChild ('prueba') pruebas!: ElementRef;
+ // bar: any;
+  // Guardo el observable del servicio en una variable para actualizar la pagina cada vez que alla un cambio
+  actualizarContador = this.socketHoraService.webSocketHora;
 
   constructor(
     private helperService: HelperServiceService,
@@ -67,7 +71,6 @@ export class TablaVendedorComponent implements OnInit, OnDestroy {
     private tablaRecepcionService: TablaRecepcionService,
     public socketHoraService: SocketHoraService,
     private render2: Renderer2,
-   // public webSocketService: WebSocketService
   ) {
     this.currentUserSubject = new BehaviorSubject<any>(
       sessionStorage.getItem('currentUser') || '{}'
@@ -76,12 +79,20 @@ export class TablaVendedorComponent implements OnInit, OnDestroy {
     let prueba = this.rol[6];
     this.name = JSON.parse(prueba)[2];
 
-  
-  
-
   }
-     
-   
+  ngOnChanges(changes: SimpleChanges): void {    
+    console.log(changes['actualizarContador'].currentValue)
+  }
+  
+  /* change () {
+    const prueba = this.pruebas.nativeElement;       
+//   this.render2.setAttribute(prueba, 'value', JSON.stringify(this.actualizarContador));
+  // this.render2.setAttribute(prueba, 'value', "asd");  
+   //this.render2.selectRootElement(this.pruebas.nativeElement).click();
+    console.log(this.render2.listen('document', 'change', (evt) => {
+    console.log('Clicking the document', evt);
+  }))
+   } */
 
 
 
@@ -96,7 +107,8 @@ export class TablaVendedorComponent implements OnInit, OnDestroy {
    }, 4000);
  
 
-
+   this.socketHoraService.openWebSocket();
+   
   } 
 
   ngOnDestroy(): void {
@@ -117,7 +129,7 @@ export class TablaVendedorComponent implements OnInit, OnDestroy {
     this.webSocketService.sendMessage(chatMessageDto);
     sendForm.controls['message'].reset();
   } */
-  /*  
+   /*
   sendMessageHora(nombre: string, posicion: any) {
     const webSocketHora = new WebSocketHora(nombre, posicion);
     this.socketHoraService.sendMessage(webSocketHora)   
@@ -211,6 +223,6 @@ export class TablaVendedorComponent implements OnInit, OnDestroy {
     });
   }
 
-
+ 
 
 }

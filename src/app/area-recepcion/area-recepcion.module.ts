@@ -11,6 +11,8 @@ import { HeaderComponent } from '../componentes-generales/header/header.componen
 import { AsideComponent } from '../componente-aside/aside/aside.component';
 import { FilterPipe } from '../pipes/filter.pipe';
 import { ComponentesGeneralesModule } from '../componentes-generales/componentes-generales.module';
+import { AppModule } from '../app.module';
+import { ComponenteAsideModule } from '../componente-aside/componente-aside.module';
 
 
 @NgModule({
@@ -19,7 +21,6 @@ import { ComponentesGeneralesModule } from '../componentes-generales/componentes
     RecepcionComponent,
     TablaRecepcionComponent,
     FilterPipe,
-    AsideComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +29,8 @@ import { ComponentesGeneralesModule } from '../componentes-generales/componentes
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
-    ComponentesGeneralesModule
+    ComponentesGeneralesModule,
+    ComponenteAsideModule
   ]
 })
 export class AreaRecepcionModule { }
